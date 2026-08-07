@@ -487,6 +487,186 @@ h1 {
 
 }
 
+/* =========================
+   ORBITS
+========================= */
+
+.orbit {
+   position: absolute;
+
+   left: 50%;
+   top: 50%;
+
+   border: 1px solid rgba(180, 160, 255, 0.12);
+
+   border-radius: 50%;
+
+   transform:
+      translate(-50%, -50%);
+
+   pointer-events: none;
+}
+
+.orbit-one {
+
+   width: 190px;
+   height: 190px;
+
+}
+
+.orbit-two {
+   width: 310px;
+   height: 310px;
+
+}
+
+.orbit-three {
+   width: 460px;
+   height: 460px;
+
+}
+   
+/* =========================
+   PLANETS
+========================= */
+
+   .planet {
+      position: absolute;
+
+      border-radius: 50%;
+
+      cursor: pointer;
+
+      transition:
+         transform 0.4s,
+         box-shadow 0.4s;
+
+   }
+
+   .planet:hover {
+
+      transform: scale(1.15);
+
+   }
+
+   /* PURPLE PLANET */
+
+   .planet-one {
+
+      width: 55px;
+      height: 55px;
+
+      left: 
+         calc(50% - 155px);
+      top:
+         calc(50% - 27px);
+
+      background:
+
+         radial-gradient(
+            circle at 35% 25%,
+            #fff0ff,
+            #c875ff 40%,
+            #7137a5 70%,
+            #25103b
+            );
+
+      box-shadow:
+
+         0 0 20px #c26cff,
+         0 0 45px rgba(180, 80, 255, 0.35);
+   }
+
+   /*BLUE PLANET */
+
+   .planet-two {
+      width: 44px;
+      height: 44px;
+
+      left: 
+         calc(50% + 75px);
+
+      top:
+         calc(50% - 22px);
+
+      background: 
+
+         radial-gradient(
+            circle at 30% 25%,
+            #e8f7ff,
+            #668fff 35%,
+            #293c9b 65%,
+            #101632
+            );
+
+      box-shadow:
+
+         0 0 18px #668dff,
+         0 0 40px rgba(70, 110, 255, 0.4);
+   }
+
+   /* RED PLANET */
+
+   .planet-three {
+
+      width: 68px;
+      height: 68px;
+
+      left: 
+         calc(50% + 185px);
+
+      top:
+         calc(50% - 34px);
+
+      background:
+
+         radial-gradient(
+            circle at 30% 25%,
+            #ffd9df,
+            #d55b77 35%,
+            #74283f 65%,
+            #270b17
+            );
+
+      box-shadow:
+
+         0 0 20px #d85e7c,
+         0 0 45px rgba(220, 70, 100, 0.3);
+   } 
+
+/* =========================
+   MOON
+========================= */
+
+   .moon {
+
+      position: absolute;
+
+      width: 18px;
+      height: 18px;
+
+      left:
+         calc(50% - 9px);
+
+      top:
+         calc(50% - 105px);
+
+      border-radius:
+
+         radial-gradient(
+            circle at 30% 25%,
+            white,
+            #b8b5c9 50%,
+            #555365
+            );
+
+      box-shadow:
+         0 0 12px
+         rgba(255, 255, 255, 0.6);
+
+      cursor: pointer;
+
+   }
 
 /* =========================
    MOBILE
@@ -590,6 +770,55 @@ h1 {
 
 
     <div id="central-star"></div>
+   <!-- PLANETS -->
+
+<div class="orbit orbit-one"></div>
+
+<div class="orbit orbit-two"></div>
+
+<div class="orbit orbit-three"></div>
+
+
+<!-- PLANET 1 -->
+
+<div
+    class="planet planet-one"
+    onclick="openPlanet('memory')">
+
+    <div class="planet-glow"></div>
+
+</div>
+
+
+<!-- PLANET 2 -->
+
+<div
+    class="planet planet-two"
+    onclick="openPlanet('leah')">
+
+    <div class="planet-glow"></div>
+
+</div>
+
+
+<!-- PLANET 3 -->
+
+<div
+    class="planet planet-three"
+    onclick="openPlanet('music')">
+
+    <div class="planet-glow"></div>
+
+</div>
+
+
+<!-- MOON -->
+
+<div
+    class="moon"
+    onclick="openPlanet('moon')">
+
+</div>
 
 </section>
 
@@ -707,6 +936,53 @@ function launchMission() {
         );
 
     }, 700);
+
+}
+
+   /* =========================
+   PLANET INTERACTIONS
+========================= */
+
+function openPlanet(type) {
+
+    if (type === "memory") {
+
+        alert(
+            "🪐 THE LEAH ARCHIVE\n\n" +
+            "This planet is all about you."
+        );
+
+    }
+
+
+    if (type === "leah") {
+
+        alert(
+            "💜 THINGS I NOTICE\n\n" +
+            "The little things that make you, you."
+        );
+
+    }
+
+
+    if (type === "music") {
+
+        alert(
+            "🎵 MUSIC PLANET\n\n" +
+            "Your soundtrack will live here."
+        );
+
+    }
+
+
+    if (type === "moon") {
+
+        alert(
+            "🌙 MOON TRANSMISSION\n\n" +
+            "You found something hidden."
+        );
+
+    }
 
 }
 
