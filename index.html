@@ -693,13 +693,167 @@ h1 {
 
 }
 
+/* =========================
+   DISCOVERY SCREEN
+========================= */
+
+   #discovery-screen {
+
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 50;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 25px;
+
+      background:
+         rgba(2, 2, 11, 0.92);
+
+      backdrop-filter:
+         blur(12px);
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      pointer-events: none;
+
+      transition:
+         opacity 0.5s ease;
+   }
+
+   #discovery-screen.active {
+
+      opacity: 1;
+
+      visibility: visible;
+
+      pointer-events: auto;
+   }
+
+   .discovery-panel {
+      width: 100%;
+
+      max-width: 520px;
+
+      padding: 35px 25px;
+
+      text-align: center;
+
+      border:
+         1px solid
+      rgba(170, 140, 255, 0.45);
+
+      border-radius: 25px;
+
+      background: 
+         linear-gradient(
+            145deg,
+            rgba(35, 25, 75, 0.95),
+            rgba(8, 8, 25, 0.97)
+            );
+
+      box-shadow:
+         0 0 30px
+      rgba(130, 90, 255, 0.25),
+         inset 0 0 30px
+      rgba(130, 90, 255, 0.05);
+
+      transform: 
+         translateY(20px)
+      scale(0.95);
+
+      transition: 
+         transform 0.5s ease;
+   }
+
+   #discovery-screen.active.discovery-panel {
+
+      transform: 
+         translateY(0)
+      scale(1);
+   }
+
+   .discovery-label {
+
+      font-size: 10px;
+
+      letter-spacing: 4px;
+
+      color: #a89cff;
+
+      margin-bottom: 18px;
+   }
+   
+.discovery-panel h2 {
+
+   margin: 0;
+
+   font-size: 28px;
+
+   letter-spacing: -1px;
+}
+
+   .discovery-line {
+
+      width: 60px;
+
+      height: 1px;
+
+      margin: 20px auto;
+
+      background: 
+         #9b7cff;
+
+      box-shadow:
+         0 0 10px #9b7cff;
+   }
+
+   .discovery-panel p {
+
+      color: #c7c4d8;
+
+      font-size: 15px;
+
+      line-height: 1.8;
+
+      white-space: pre-line;
+   }
+
+   .close-discovery {
+
+      margin-top: 20px;
+
+      padding: 12px 22px;
+
+      border-radius: 30px;
+
+      border:
+         1px solid
+      #8e7cff;
+
+      background:
+         rgba(80, 60, 150, 0.25);
+
+      color: white;
+
+      font-size: 13px;
+
+      cursor: pointer;
+   }
+   
 </style>
 
 </head>
 
-
 <body>
-
 
 <!-- =========================
      SPACE
@@ -830,6 +984,40 @@ h1 {
 
 </section>
 
+<!-- =========================
+     DISCOVERY SCREEN
+========================= -->
+
+<div id="discovery-screen">
+
+   <div class=discovery-panel">
+
+      <div class="discovery-label"
+         id="discovery-label">
+         MISSION DISCOVERY
+      </div>
+
+      <h2 id="discovery-title">
+         TITLE
+      </h2>
+
+      <div class="discovery-line"></div>
+
+      <p id="discovery-message">
+         MESSAGE
+      </p>
+
+      <button
+         class="close-discovery"
+         onlick="closeDiscovery()">
+
+         RETURN TO UNIVERSE
+
+      </button>
+
+   </div>
+
+</div>
 
 <script>
 
@@ -915,15 +1103,20 @@ function launchMission() {
 
 function openDiscovery(label, title, message) {
 
-    alert(
-        label +
-        "\n\n" +
-        title +
-        "\n\n" +
-        message
-    );
+   document.getElementById("discovery-label").textContent = label;
 
+   document.getElementById("discovery-title").textContent = title;
+
+   document.getElementById("discovery-message").textContent = message;
+
+   document.getElementById("discovery-screen").classList.add("active");
 }
+
+   function closeDiscovery() {
+
+      document.getElementById("discovery-screen").classList.remove("active");
+   }
+
 
 
 /* =========================
