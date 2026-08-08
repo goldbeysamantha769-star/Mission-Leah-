@@ -943,6 +943,17 @@ function launchMission() {
 
 }
 
+   function openDiscovery(label, title, message) {
+
+      alert(
+         label +
+         "\n\n" +
+         title +
+         "\n\n" +
+         message
+         );
+   }
+
    /* =========================
    PLANET INTERACTIONS
 ========================= */
@@ -951,13 +962,21 @@ function openPlanet(type) {
 
     if (type === "memory") {
 
-        alert(
-            "🪐 THE LEAH ARCHIVE\n\n" +
-            "This planet is all about you."
-        );
+       openDiscovery(
+          "PLANET LEAH",
+          "PERSONAL ARCHIVE",
+          'You found something that was not marked on the map.
 
-    }
+          This planet contains a collection of things about you.
 
+          Some things are obvious.
+
+          Some things are tiny.
+
+          And some are things you probably dont realise i have noticed
+
+       Take your time exploring 💜'
+          );
 
     if (type === "leah") {
 
