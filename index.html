@@ -833,48 +833,35 @@ h1 {
 
 <script>
 
+   <script>
 
 /* =========================
    CREATE STARS
 ========================= */
 
-const space =
-    document.getElementById("space");
+const space = document.getElementById("space");
 
+for (let i = 0; i < 220; i++) {
 
-for (
-    let i = 0;
-    i < 220;
-    i++
-) {
-
-    const star =
-        document.createElement("div");
-
+    const star = document.createElement("div");
 
     star.classList.add("star");
-
 
     star.style.left =
         Math.random() * 100 + "%";
 
-
     star.style.top =
         Math.random() * 100 + "%";
-
 
     star.style.setProperty(
         "--speed",
         (2 + Math.random() * 5) + "s"
     );
 
-
     star.style.animationDelay =
         Math.random() * 5 + "s";
 
-
     space.appendChild(star);
-
 }
 
 
@@ -882,100 +869,81 @@ for (
    BIG STARS
 ========================= */
 
-for (
-    let i = 0;
-    i < 18;
-    i++
-) {
+for (let i = 0; i < 18; i++) {
 
-    const star =
-        document.createElement("div");
+    const star = document.createElement("div");
 
-
-    star.classList.add(
-        "big-star"
-    );
-
+    star.classList.add("big-star");
 
     star.style.left =
         Math.random() * 100 + "%";
 
-
     star.style.top =
         Math.random() * 100 + "%";
-
 
     star.style.animationDelay =
         Math.random() * 4 + "s";
 
-
     space.appendChild(star);
-
 }
 
 
 /* =========================
-   LAUNCH
+   LAUNCH MISSION
 ========================= */
 
 function launchMission() {
 
     const intro =
-        document.getElementById(
-            "intro"
-        );
-
+        document.getElementById("intro");
 
     const universe =
-        document.getElementById(
-            "universe"
-        );
+        document.getElementById("universe");
 
+    intro.classList.add("hidden");
 
-    intro.classList.add(
-        "hidden"
-    );
+    setTimeout(function() {
 
-
-    setTimeout(() => {
-
-        universe.classList.add(
-            "active"
-        );
+        universe.classList.add("active");
 
     }, 700);
 
 }
 
-   function openDiscovery(label, title, message) {
 
-      alert(
-         label +
-         "\n\n" +
-         title +
-         "\n\n" +
-         message
-         );
-   }
+/* =========================
+   DISCOVERY WINDOW
+========================= */
 
-   /* =========================
+function openDiscovery(label, title, message) {
+
+    alert(
+        label +
+        "\n\n" +
+        title +
+        "\n\n" +
+        message
+    );
+
+}
+
+
+/* =========================
    PLANET INTERACTIONS
 ========================= */
 
-   function openPlanet(type) {
+function openPlanet(type) {
+
 
     if (type === "heart") {
 
         openDiscovery(
             "MISSION CORE",
             "THE HEART OF THE UNIVERSE",
-            `Every mission needs a centre.
-
-This universe has a very specific reason for existing.
-
-You.
-
-💜`
+            "Every mission needs a centre.\n\n" +
+            "This universe has a very specific " +
+            "reason for existing.\n\n" +
+            "You.\n\n💜"
         );
 
     }
@@ -986,17 +954,15 @@ You.
         openDiscovery(
             "PLANET LEAH",
             "PERSONAL ARCHIVE",
-            `You found something that was not marked on the map.
-
-This planet contains a collection of things about you.
-
-Some things are obvious.
-
-Some things are tiny.
-
-And some are things you probably don't realise I've noticed.
-
-Take your time exploring. 💜`
+            "You found something that was not " +
+            "marked on the map.\n\n" +
+            "This planet contains a collection " +
+            "of things about you.\n\n" +
+            "Some things are obvious.\n\n" +
+            "Some things are tiny.\n\n" +
+            "And some are things you probably " +
+            "don't realise I've noticed.\n\n" +
+            "Take your time exploring. 💜"
         );
 
     }
@@ -1007,9 +973,9 @@ Take your time exploring. 💜`
         openDiscovery(
             "PLANET TWO",
             "THINGS I NOTICE",
-            `The little things that make you, you.
-
-This is where we'll put all the tiny details that make Leah special. 💜`
+            "The little things that make you, you.\n\n" +
+            "This is where we'll put all the tiny " +
+            "details that make Leah special. 💜"
         );
 
     }
@@ -1020,9 +986,9 @@ This is where we'll put all the tiny details that make Leah special. 💜`
         openDiscovery(
             "PLANET THREE",
             "YOUR SOUNDTRACK",
-            `Every universe needs a soundtrack.
-
-This is where your music, favourite songs and memories will eventually live. 🎵`
+            "Every universe needs a soundtrack.\n\n" +
+            "This is where your music, favourite " +
+            "songs and memories will eventually live. 🎵"
         );
 
     }
@@ -1033,16 +999,17 @@ This is where your music, favourite songs and memories will eventually live. �
         openDiscovery(
             "FINAL TRANSMISSION",
             "THE MOON",
-            `You found something hidden.
-
-There is a message here that was never meant to be found by just anyone.
-
-🌙💜`
+            "You found something hidden.\n\n" +
+            "There is a message here that was " +
+            "never meant to be found by just anyone.\n\n" +
+            "🌙💜"
         );
 
     }
 
 }
+
+</script>
 </script>
 
 
