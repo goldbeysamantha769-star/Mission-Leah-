@@ -773,7 +773,11 @@ h1 {
     </div>
 
 
-    <div id="central-star"></div>
+    <div 
+       id="central-star"
+       onclick="openPlanet('heart')">
+          </div>
+          
    <!-- PLANETS -->
 
 <div class="orbit orbit-one"></div>
@@ -959,6 +963,21 @@ function launchMission() {
 ========================= */
 
 function openPlanet(type) {
+
+   if (type === "heart") {
+
+      openDiscovery(
+         "MISSION CORE",
+         "THE HEART OF THE UNIVERSE",
+         'Every mission needs a center.
+        
+         And this one has a very specific reason for existing.
+         
+         You.
+         
+         💜'
+         );
+   }
 
     if (type === "memory") {
 
