@@ -962,46 +962,54 @@ function launchMission() {
    PLANET INTERACTIONS
 ========================= */
 
-function openPlanet(type) {
+   function openPlanet(type) {
 
-   if (type === "heart") {
+    if (type === "heart") {
 
-      openDiscovery(
-         "MISSION CORE",
-         "THE HEART OF THE UNIVERSE",
-         'Every mission needs a center.
-        
-         And this one has a very specific reason for existing.
-         
-         You.
-         
-         💜'
-         );
-   }
+        openDiscovery(
+            "MISSION CORE",
+            "THE HEART OF THE UNIVERSE",
+            `Every mission needs a centre.
+
+This universe has a very specific reason for existing.
+
+You.
+
+💜`
+        );
+
+    }
+
 
     if (type === "memory") {
 
-       openDiscovery(
-          "PLANET LEAH",
-          "PERSONAL ARCHIVE",
-          'You found something that was not marked on the map.
+        openDiscovery(
+            "PLANET LEAH",
+            "PERSONAL ARCHIVE",
+            `You found something that was not marked on the map.
 
-          This planet contains a collection of things about you.
+This planet contains a collection of things about you.
 
-          Some things are obvious.
+Some things are obvious.
 
-          Some things are tiny.
+Some things are tiny.
 
-          And some are things you probably dont realise i have noticed
+And some are things you probably don't realise I've noticed.
 
-       Take your time exploring 💜'
-          );
+Take your time exploring. 💜`
+        );
+
+    }
+
 
     if (type === "leah") {
 
-        alert(
-            "💜 THINGS I NOTICE\n\n" +
-            "The little things that make you, you."
+        openDiscovery(
+            "PLANET TWO",
+            "THINGS I NOTICE",
+            `The little things that make you, you.
+
+This is where we'll put all the tiny details that make Leah special. 💜`
         );
 
     }
@@ -1009,9 +1017,12 @@ function openPlanet(type) {
 
     if (type === "music") {
 
-        alert(
-            "🎵 MUSIC PLANET\n\n" +
-            "Your soundtrack will live here."
+        openDiscovery(
+            "PLANET THREE",
+            "YOUR SOUNDTRACK",
+            `Every universe needs a soundtrack.
+
+This is where your music, favourite songs and memories will eventually live. 🎵`
         );
 
     }
@@ -1019,16 +1030,19 @@ function openPlanet(type) {
 
     if (type === "moon") {
 
-        alert(
-            "🌙 MOON TRANSMISSION\n\n" +
-            "You found something hidden."
+        openDiscovery(
+            "FINAL TRANSMISSION",
+            "THE MOON",
+            `You found something hidden.
+
+There is a message here that was never meant to be found by just anyone.
+
+🌙💜`
         );
 
     }
 
 }
-
-
 </script>
 
 
