@@ -1113,7 +1113,181 @@ h1 {
 
     backdrop-filter: blur(8px);
 }
-   
+
+   /* =========================
+   PINK PLANET DISCOVERIES
+========================= */
+
+.pink-discovery {
+
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    background:
+        rgba(255, 210, 245, 0.08);
+
+    border:
+        1px solid
+        rgba(255, 190, 240, 0.35);
+
+    box-shadow:
+        0 0 15px
+        rgba(255, 150, 230, 0.35),
+        inset 0 0 15px
+        rgba(255, 180, 240, 0.08);
+
+    backdrop-filter: blur(5px);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation:
+        pinkFloat 4s ease-in-out infinite;
+}
+
+
+/* TAP / HOVER EFFECT */
+
+.pink-discovery:hover {
+
+    transform:
+        scale(1.2);
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 170, 235, 0.8),
+        0 0 45px
+        rgba(180, 100, 255, 0.35);
+}
+
+
+/* FLOATING ANIMATION */
+
+@keyframes pinkFloat {
+
+    0% {
+
+        transform:
+            translateY(0px)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px)
+            rotate(3deg);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0px)
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =========================
+   DISCOVERY POSITIONS
+========================= */
+
+.tulip-discovery {
+
+    left: 17%;
+
+    top: 25%;
+
+    animation-delay: 0s;
+}
+
+
+.guitar-discovery {
+
+    left: 68%;
+
+    top: 22%;
+
+    animation-delay: 0.8s;
+}
+
+
+.pepsi-discovery {
+
+    left: 25%;
+
+    top: 55%;
+
+    animation-delay: 1.4s;
+}
+
+
+.constellation-discovery {
+
+    left: 72%;
+
+    top: 50%;
+
+    animation-delay: 0.4s;
+}
+
+
+.shooting-discovery {
+
+    left: 45%;
+
+    top: 34%;
+
+    animation-delay: 1.8s;
+}
+
+
+.butterfly-discovery {
+
+    left: 55%;
+
+    top: 68%;
+
+    animation-delay: 1s;
+}
+
+
+/* =========================
+   MOBILE POSITIONING
+========================= */
+
+@media (max-width: 600px) {
+
+    .pink-discovery {
+
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 25px;
+
+    }
+
+}
 </style>
 
 </head>
@@ -1262,6 +1436,38 @@ h1 {
     <div class="pink-universe-subtitle">
         Some things are worth discovering. 🌸
     </div>
+
+   <!-- PINK PLANET DISCOVERIES -->
+
+<div class="pink-discovery tulip-discovery"
+     onclick="openPinkDiscovery('tulip')">
+    🌷
+</div>
+
+<div class="pink-discovery guitar-discovery"
+     onclick="openPinkDiscovery('guitar')">
+    🎸
+</div>
+
+<div class="pink-discovery pepsi-discovery"
+     onclick="openPinkDiscovery('pepsi')">
+    🥤
+</div>
+
+<div class="pink-discovery constellation-discovery"
+     onclick="openPinkDiscovery('constellation')">
+    ✨
+</div>
+
+<div class="pink-discovery shooting-discovery"
+     onclick="openPinkDiscovery('shooting')">
+    ⭐
+</div>
+
+<div class="pink-discovery butterfly-discovery"
+     onclick="openPinkDiscovery('butterfly')">
+    🦋
+</div>
 
     <button
         class="pink-back-button"
@@ -1426,6 +1632,93 @@ function closePinkUniverse() {
 
 }
 
+   /* =========================
+   PINK PLANET DISCOVERIES
+========================= */
+
+function openPinkDiscovery(type) {
+
+    if (type === "tulip") {
+
+        openDiscovery(
+            "PINK PLANET • DISCOVERY 01",
+            "A FLOWER FOR LEAH",
+            "Some things just suit certain people.\n\n" +
+            "And somehow, tulips feel very you. 🌷"
+        );
+
+    }
+
+    if (type === "guitar") {
+
+        openDiscovery(
+            "PINK PLANET • DISCOVERY 02",
+            "A QUIET SOUND",
+            "There's something about an acoustic guitar " +
+            "that feels a little more personal.\n\n" +
+            "Maybe that's why I can picture it fitting " +
+            "perfectly into your universe. 🎸"
+        );
+
+    }
+
+    if (type === "pepsi") {
+
+        openDiscovery(
+            "PINK PLANET • DISCOVERY 03",
+            "THE PEPSI SITUATION",
+            "I genuinely don't understand how you can " +
+            "be this obsessed with Pepsi.\n\n" +
+            "Meanwhile, I absolutely despise it. 😭\n\n" +
+            "Somehow we've managed to coexist despite " +
+            "our extremely different opinions on Pepsi. 🥤💜"
+        );
+
+    }
+
+    if (type === "constellation") {
+
+        openDiscovery(
+            "PINK PLANET • DISCOVERY 04",
+            "A CONSTELLATION OF LITTLE THINGS",
+            "Not everything that makes someone special " +
+            "is something they'd notice about themselves.\n\n" +
+            "Sometimes it's the tiny things.\n\n" +
+            "The things you say, the things you like, " +
+            "the little details that make you completely you.\n\n" +
+            "Put them all together, and somehow they " +
+            "make a constellation. ✨"
+        );
+
+    }
+
+    if (type === "shooting") {
+
+        openDiscovery(
+            "PINK PLANET • DISCOVERY 05",
+            "CATCH A STAR",
+            "You actually caught it. ⭐\n\n" +
+            "I guess that means you get to keep this one.\n\n" +
+            "Consider it a little piece of your universe."
+        );
+
+    }
+
+    if (type === "butterfly") {
+
+        openDiscovery(
+            "PINK PLANET • DISCOVERY 06",
+            "STILL BECOMING",
+            "Maybe the best thing about people is that " +
+            "they're never completely finished becoming " +
+            "who they're meant to be.\n\n" +
+            "There's always another version of you waiting " +
+            "to be discovered. 🦋"
+        );
+
+    }
+
+}
    function openPlanet(type) {
 
        if (type === "memory") {
