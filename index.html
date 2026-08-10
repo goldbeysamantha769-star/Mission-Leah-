@@ -1287,6 +1287,24 @@ h1 {
 
     }
 
+   /* =========================
+   NEW PINK PLANET DISCOVERIES
+========================= */
+
+.aesthetic-discovery {
+
+    left: 68%;
+    top: 32%;
+
+}
+
+.noticed-discovery {
+
+    left: 28%;
+    top: 68%;
+
+}
+
 }
 </style>
 
@@ -1467,6 +1485,16 @@ h1 {
 <div class="pink-discovery butterfly-discovery"
      onclick="openPinkDiscovery('butterfly')">
     🦋
+</div>
+
+   <div class="pink-discovery aesthetic-discovery"
+     onclick="openPinkDiscovery('aesthetic')">
+    🌸
+</div>
+
+   <div class="pink-discovery noticed-discovery"
+     onclick="openPinkDiscovery('noticed')">
+    👀
 </div>
 
     <button
@@ -1718,6 +1746,43 @@ function openPinkDiscovery(type) {
         "And I think that's one of the nicest things about you.\n\n" +
         "You don't have to have everything figured out.\n" +
         "You're still becoming you. 🦋"
+    );
+
+}
+
+   if (type === "aesthetic") {
+
+    openDiscovery(
+        "PINK PLANET • DISCOVERY 07",
+        "THE AESTHETIC OF YOU",
+        "There are people who have a certain kind of energy about them.\n\n" +
+        "Not something you can really explain.\n" +
+        "Just a feeling.\n\n" +
+        "The colours, the music, the stories, the little things " +
+        "you gravitate towards — somehow they all become part " +
+        "of your own little world.\n\n" +
+        "And I think that's what makes your universe yours. 💜"
+    );
+
+}
+
+   if (type === "noticed") {
+
+    openDiscovery(
+        "PINK PLANET • DISCOVERY 08",
+        "SOMETHING I NOTICE",
+        "There are little things you probably don't even realise you do.\n\n" +
+        "Like how, when you're thinking, you look somewhere just " +
+        "above the camera — like your thoughts are slightly off-screen.\n\n" +
+        "Or the little glint in your eyes when you're explaining " +
+        "something. Literally anything. You could be talking about " +
+        "the most random thing, but somehow you look so genuinely " +
+        "interested in what you're saying.\n\n" +
+        "And then there's your hands.\n\n" +
+        "Tapping your fingers. Rubbing them together. Picking at them. " +
+        "Tapping your nails against whatever happens to be nearby.\n\n" +
+        "Sometimes you probably don't even notice you're doing it.\n\n" +
+        "I do."
     );
 
 }
