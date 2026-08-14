@@ -1470,10 +1470,10 @@ h1 {
         STATUS: ACTIVE
     </div>
 
-    <div class="mission-progress">
-        DISCOVERED:
-        <span id="mission-progress-count">0 / 8</span>
-    </div>
+  <div class="mission-progress">
+    MISSION PROGRESS:
+    <span id="mission-progress-count">0%</span>
+</div>
 
 </div>
 
@@ -1640,6 +1640,27 @@ h1 {
 
 const space = document.getElementById("space");
 
+   /* =========================
+   MISSION PROGRESS
+========================= */
+
+const discoveredItems = new Set();
+
+const totalDiscoveries = 8;
+
+function updateMissionProgress() {
+
+    const count = discoveredItems.size;
+
+    const percentage =
+        Math.round((count / totalDiscoveries) * 100);
+
+    document.getElementById(
+        "mission-progress-count"
+    ).textContent = percentage + "%";
+
+}
+
 for (let i = 0; i < 220; i++) {
 
     const star = document.createElement("div");
@@ -1758,6 +1779,10 @@ function closePinkUniverse() {
 ========================= */
 
 function openPinkDiscovery(type) {
+
+       discoveredItems.add("pink-" + type);
+
+    updateMissionProgress();
 
     if (type === "tulip") {
 
