@@ -491,7 +491,7 @@ h1 {
 
    .mission-progress {
 
-    margin-top: 7px;
+    margin-top: 6px;
 
     font-size: 9px;
 
@@ -499,7 +499,7 @@ h1 {
 
     color: #8f89aa;
 
-    opacity: 0.9;
+    opacity: 0.95;
 
 }
 
@@ -507,10 +507,34 @@ h1 {
 
     color: #c7b9ff;
 
-    font-weight: 600;
+    font-weight: 700;
+
+    text-shadow:
+        0 0 8px
+        rgba(199, 185, 255, 0.6);
 
 }
 
+   .mission-progress::before {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 45px;
+
+    height: 2px;
+
+    margin-right: 7px;
+
+    vertical-align: middle;
+
+    background:
+        rgba(150, 130, 220, 0.25);
+
+    border-radius: 5px;
+
+}
 /* =========================
    ORBITS
 ========================= */
@@ -664,36 +688,56 @@ h1 {
 
    .moon {
 
-      position: absolute;
+    position: absolute;
 
-      width: 18px;
-      height: 18px;
+    width: 22px;
+    height: 22px;
 
-      left:
-         calc(50% - 9px);
+    left:
+        calc(50% - 11px);
 
-      top:
-         calc(50% - 105px);
+    top:
+        calc(50% - 105px);
 
-      border-radius: 50%;
+    border-radius: 50%;
 
-      background:
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff,
+            #e5e2f0 35%,
+            #aaa6bc 65%,
+            #555163
+        );
 
-         radial-gradient(
-            circle at 30% 25%,
-            white,
-            #b8b5c9 50%,
-            #555365
-            );
+    box-shadow:
+        0 0 12px
+        rgba(255, 255, 255, 0.7),
 
-      box-shadow:
-         0 0 12px
-         rgba(255, 255, 255, 0.6);
+        0 0 28px
+        rgba(190, 180, 230, 0.35);
 
-      cursor: pointer;
+    cursor: pointer;
 
-   }
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
 
+}
+
+.moon:hover {
+
+    transform: scale(1.25);
+
+    box-shadow:
+        0 0 18px
+        rgba(255, 255, 255, 0.9),
+
+        0 0 35px
+        rgba(200, 190, 255, 0.55);
+
+}
+   
 /* =========================
    MOBILE
 ========================= */
@@ -2351,7 +2395,7 @@ const space = document.getElementById("space");
 
 const discoveredItems = new Set();
 
-const totalDiscoveries = 18;
+const totalDiscoveries = 19;
 
 function updateMissionProgress() {
 
@@ -2941,20 +2985,32 @@ function openRedDiscovery(type) {
 
     return;
 
+      }
+
+      if (type === "moon") {
+
+    discoveredItems.add("moon");
+
+    updateMissionProgress();
+
+    openDiscovery(
+        "HIDDEN TRANSMISSION • 001",
+        "THE MOON",
+        "You found the one thing that wasn't meant " +
+        "to be obvious.\n\n" +
+        "Some things in this universe aren't planets.\n" +
+        "They aren't stars.\n" +
+        "They aren't even things you can easily explain.\n\n" +
+        "They're just little pieces of someone that " +
+        "you somehow ended up carrying with you.\n\n" +
+        "And maybe that's what this moon is.\n\n" +
+        "A little reminder that even after you've " +
+        "explored everything else, there can still " +
+        "be something hidden in the dark.\n\n" +
+        "🌙💜"
+    );
+
 }
-    if (type === "moon") {
-
-        openDiscovery(
-            "FINAL TRANSMISSION",
-            "THE MOON",
-            "You found something hidden.\n\n" +
-            "There is a message here that was " +
-            "never meant to be found by just anyone.\n\n" +
-            "🌙💜"
-        );
-
-    }
-
 }
 
 </script>
