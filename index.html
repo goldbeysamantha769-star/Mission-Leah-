@@ -1969,6 +1969,31 @@ h1 {
     }
 
 }
+
+   .red-discovery span {
+    font-size: 25px;
+    line-height: 1;
+}
+
+.red-discovery small {
+    position: absolute;
+
+    bottom: -24px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    white-space: nowrap;
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+    color: #e7c5ce;
+
+    opacity: 0.85;
+}
 </style>
 
 </head>
@@ -2244,34 +2269,36 @@ h1 {
         A little collection of artists that feel like you. ❤️
     </div>
 
-    <!-- MUSIC DISCOVERIES -->
+   <!-- RED PLANET DISCOVERIES -->
 
-    <div class="red-discovery zach-discovery"
-         onclick="openRedDiscovery('zach')">
-        🎸
-    </div>
+<div class="red-discovery zach-discovery"
+     onclick="openRedDiscovery('zach')">
+    <span>🎸</span>
+    <small>ZACH BRYAN</small>
+</div>
 
-    <div class="red-discovery alyssa-discovery"
-         onclick="openRedDiscovery('alyssa')">
-        🦋
-    </div>
+<div class="red-discovery alyssa-discovery"
+     onclick="openRedDiscovery('alyssa')">
+    <span>🦋</span>
+    <small>ALYSSA GRACE</small>
+</div>
 
-    <div class="red-discovery kingfishr-discovery"
-         onclick="openRedDiscovery('kingfishr')">
-        🌊
-    </div>
+<div class="red-discovery kingfishr-discovery"
+     onclick="openRedDiscovery('kingfishr')">
+    <span>🌊</span>
+    <small>KINGFISHR</small>
+</div>
 
-    <div class="red-discovery picture-discovery"
-         onclick="openRedDiscovery('picture')">
-        🎶
-    </div>
-
+<div class="red-discovery picture-discovery"
+     onclick="openRedDiscovery('picture')">
+    <span>🎶</span>
+    <small>PICTURE THIS</small>
+</div>
     <button
         class="red-back-button"
         onclick="closeRedUniverse()">
 
         ← RETURN
-
     </button>
 
 </section>
