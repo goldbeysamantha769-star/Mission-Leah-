@@ -1957,7 +1957,15 @@ h1 {
 
 }
 
+.bloodstream-discovery {
 
+    left: 43%;
+
+    top: 68%;
+
+    animation-delay: 1.2s;
+
+}
 /* =========================
    RETURN BUTTON
 ========================= */
@@ -2337,6 +2345,12 @@ h1 {
      onclick="openRedDiscovery('picture')">
     <span>🎶</span>
     <small>PICTURE THIS</small>
+</div>
+
+   <div class="red-discovery bloodstream-discovery"
+     onclick="openRedDiscovery('bloodstream')">
+    <span>🩸</span>
+    <small>BLOODSTREAM</small>
 </div>
     <button
         class="red-back-button"
@@ -2919,6 +2933,25 @@ function openRedDiscovery(type) {
             "Different memories.\n\n" +
             "But somehow, they all belong on the same playlist.\n\n" +
             "Yours. 🎶"
+        );
+
+    }
+
+       if (type === "bloodstream") {
+
+        openDiscovery(
+            "RED PLANET • DISCOVERY 05",
+            "BLOODSTREAM",
+            "There are some songs that are just songs.\n\n" +
+            "And then there are the ones that somehow " +
+            "become attached to a person.\n\n" +
+            "Bloodstream feels like one of those for you.\n\n" +
+            "The kind of song that belongs in the background " +
+            "of a bedroom, playing while you're doing your own thing, " +
+            "and somehow becoming part of the atmosphere without " +
+            "you even thinking about it.\n\n" +
+            "So obviously, it needed its own little place here.\n\n" +
+            "🎵💜"
         );
 
     }
