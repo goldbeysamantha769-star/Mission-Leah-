@@ -1393,6 +1393,291 @@ h1 {
     }
 
 }
+
+   /* =========================
+   BLUE PLANET UNIVERSE
+========================= */
+
+#blue-universe {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 40;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(80, 150, 255, 0.28),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(100, 80, 255, 0.28),
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at 50% 50%,
+            #101f4a,
+            #070d24 55%,
+            #02030b 100%
+        );
+
+    transition:
+        opacity 0.8s ease;
+}
+
+
+#blue-universe.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* TITLE */
+
+.blue-universe-title {
+
+    position: absolute;
+
+    top: 35px;
+
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #9ecbff;
+
+}
+
+
+/* SUBTITLE */
+
+.blue-universe-subtitle {
+
+    position: absolute;
+
+    top: 62px;
+
+    left: 20px;
+    right: 20px;
+
+    text-align: center;
+
+    color: #b9c9e8;
+
+    font-size: 14px;
+
+}
+
+
+/* FLOATING DISCOVERIES */
+
+.blue-discovery {
+
+    position: absolute;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    background:
+        rgba(170, 215, 255, 0.08);
+
+    border:
+        1px solid
+        rgba(150, 205, 255, 0.35);
+
+    box-shadow:
+
+        0 0 15px
+        rgba(80, 160, 255, 0.35),
+
+        inset 0 0 15px
+        rgba(150, 210, 255, 0.08);
+
+    backdrop-filter:
+        blur(5px);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation:
+        blueFloat 4s ease-in-out infinite;
+}
+
+
+.blue-discovery:hover {
+
+    transform: scale(1.2);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(100, 180, 255, 0.8),
+
+        0 0 45px
+        rgba(80, 120, 255, 0.35);
+}
+
+
+@keyframes blueFloat {
+
+    0% {
+        transform:
+            translateY(0px)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(-3deg);
+    }
+
+    100% {
+        transform:
+            translateY(0px)
+            rotate(0deg);
+    }
+
+}
+
+
+/* DISCOVERY POSITIONS */
+
+.story-discovery {
+
+    left: 16%;
+    top: 25%;
+
+}
+
+.care-discovery {
+
+    left: 68%;
+    top: 22%;
+
+    animation-delay: 0.7s;
+}
+
+.energy-discovery {
+
+    left: 25%;
+    top: 53%;
+
+    animation-delay: 1.2s;
+}
+
+.conversation-discovery {
+
+    left: 72%;
+    top: 51%;
+
+    animation-delay: 0.4s;
+}
+
+.reaction-discovery {
+
+    left: 44%;
+    top: 35%;
+
+    animation-delay: 1.6s;
+}
+
+.details-discovery {
+
+    left: 55%;
+    top: 69%;
+
+    animation-delay: 1s;
+}
+
+
+/* RETURN BUTTON */
+
+.blue-back-button {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        11px 22px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid
+        rgba(150, 205, 255, 0.5);
+
+    background:
+        rgba(10, 25, 60, 0.7);
+
+    color: white;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    backdrop-filter:
+        blur(8px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .blue-discovery {
+
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 24px;
+
+    }
+
+}
 </style>
 
 </head>
@@ -1506,7 +1791,7 @@ h1 {
 
 <div
     class="planet planet-two"
-    onclick="openPlanet('leah')">
+    onclick="openBlueUniverse()"
 
     <div class="planet-glow"></div>
 
@@ -1594,6 +1879,64 @@ h1 {
         class="pink-back-button"
         onclick="closePinkUniverse()">
         ← RETURN
+    </button>
+
+</section>
+
+   <!-- =========================
+     BLUE PLANET UNIVERSE
+========================= -->
+
+<section id="blue-universe">
+
+    <div class="blue-universe-title">
+        THE LITTLE THINGS
+    </div>
+
+    <div class="blue-universe-subtitle">
+        The things that make you, you. 💙
+    </div>
+
+
+    <!-- BLUE PLANET DISCOVERIES -->
+
+    <div class="blue-discovery story-discovery"
+         onclick="openBlueDiscovery('story')">
+        🎞️
+    </div>
+
+    <div class="blue-discovery care-discovery"
+         onclick="openBlueDiscovery('care')">
+        🫶
+    </div>
+
+    <div class="blue-discovery energy-discovery"
+         onclick="openBlueDiscovery('energy')">
+        ⚡
+    </div>
+
+    <div class="blue-discovery conversation-discovery"
+         onclick="openBlueDiscovery('conversation')">
+        💬
+    </div>
+
+    <div class="blue-discovery reaction-discovery"
+         onclick="openBlueDiscovery('reaction')">
+        ✨
+    </div>
+
+    <div class="blue-discovery details-discovery"
+         onclick="openBlueDiscovery('details')">
+        📝
+    </div>
+
+
+    <button
+        class="blue-back-button"
+        onclick="closeBlueUniverse()">
+
+        ← RETURN
+
     </button>
 
 </section>
@@ -1774,6 +2117,26 @@ function closePinkUniverse() {
 
 }
 
+   /* =========================
+   BLUE PLANET UNIVERSE
+========================= */
+
+function openBlueUniverse() {
+
+    document
+        .getElementById("blue-universe")
+        .classList.add("active");
+
+}
+
+
+function closeBlueUniverse() {
+
+    document
+        .getElementById("blue-universe")
+        .classList.remove("active");
+
+}
    /* =========================
    PINK PLANET DISCOVERIES
 ========================= */
