@@ -1989,7 +1989,7 @@ const space = document.getElementById("space");
 
 const discoveredItems = new Set();
 
-const totalDiscoveries = 8;
+const totalDiscoveries = 14;
 
 function updateMissionProgress() {
 
@@ -2267,6 +2267,154 @@ function openPinkDiscovery(type) {
     );
 
 }
+
+}
+
+   /* =========================
+   BLUE PLANET DISCOVERIES
+========================= */
+
+function openBlueDiscovery(type) {
+
+    discoveredItems.add("blue-" + type);
+
+    updateMissionProgress();
+
+
+    if (type === "story") {
+
+        openDiscovery(
+            "BLUE PLANET • DISCOVERY 01",
+            "THE WAY SHE TELLS STORIES",
+            "Some people tell you a story.\n\n" +
+            "You tell me the whole universe behind it.\n\n" +
+            "Somehow, no matter what the story is, " +
+            "there's always that little surge of excitement " +
+            "when you're explaining it.\n\n" +
+            "Even on days when you aren't feeling your best, " +
+            "it's still there.\n\n" +
+            "The details. The expressions. The way you get " +
+            "carried away explaining something.\n\n" +
+            "I think that's one of my favourite things about " +
+            "listening to you.\n\n" +
+            "You don't just tell stories.\n" +
+            "You make me feel like I was there. 🎞️"
+        );
+
+    }
+
+
+    if (type === "care") {
+
+        openDiscovery(
+            "BLUE PLANET • DISCOVERY 02",
+            "THE WAY SHE CARES",
+            "You don't just tell people you care.\n\n" +
+            "You make them feel it.\n\n" +
+            "You actually listen when I need help.\n\n" +
+            "You match my energy.\n\n" +
+            "And when you know I genuinely need you, " +
+            "there's this little softness in your energy " +
+            "that I notice.\n\n" +
+            "You never make me feel stupid for not understanding something.\n\n" +
+            "You explain things without making me feel " +
+            "like I should've already known.\n\n" +
+            "Somehow, you make me feel seen.\n\n" +
+            "And I don't think that's something everyone " +
+            "knows how to do. 🫶"
+        );
+
+    }
+
+
+    if (type === "energy") {
+
+        openDiscovery(
+            "BLUE PLANET • DISCOVERY 03",
+            "HER ENERGY",
+            "I could just call it good vibes.\n\n" +
+            "But that wouldn't really explain it.\n\n" +
+            "There's something different about your energy.\n\n" +
+            "Talking to you makes me feel happy and safe " +
+            "in a way I don't get with everyone.\n\n" +
+            "And somehow, you bring that feeling with you " +
+            "no matter what kind of day you're having.\n\n" +
+            "You could have a million things going on, " +
+            "and somehow you're still just...\n\n" +
+            "you.\n\n" +
+            "There's something about that I can't really explain.\n\n" +
+            "I just know I notice it. ⚡"
+        );
+
+    }
+
+
+    if (type === "conversation") {
+
+        openDiscovery(
+            "BLUE PLANET • DISCOVERY 04",
+            "THE CONVERSATIONS",
+            "It doesn't really matter what we're talking about.\n\n" +
+            "Somehow, you always make me feel involved.\n\n" +
+            "Seen.\n\n" +
+            "Secure.\n\n" +
+            "A conversation with you can be about absolutely " +
+            "nothing important and I'll still come away from it " +
+            "feeling happier.\n\n" +
+            "And honestly?\n\n" +
+            "Seeing your notification appear on my phone is enough " +
+            "to put a smile on my face.\n\n" +
+            "There's this tiny surge of happiness that happens " +
+            "before I've even opened the message.\n\n" +
+            "I don't think you realise you can do that. 💬"
+        );
+
+    }
+
+
+    if (type === "reaction") {
+
+        openDiscovery(
+            "BLUE PLANET • DISCOVERY 05",
+            "THE LITTLE REACTIONS",
+            "This one is about the things you probably " +
+            "don't even realise you do.\n\n" +
+            "Like the way your whole face scrunches up " +
+            "when you find something disgusting.\n\n" +
+            "Or how one eyebrow somehow manages to go up " +
+            "every single time you're confused.\n\n" +
+            "They're tiny.\n\n" +
+            "Completely insignificant to anyone who isn't paying attention.\n\n" +
+            "But I notice them.\n\n" +
+            "And honestly, they're adorable.\n\n" +
+            "It's funny how the smallest reactions can become " +
+            "some of the easiest things to remember. ✨"
+        );
+
+    }
+
+
+    if (type === "details") {
+
+        openDiscovery(
+            "BLUE PLANET • DISCOVERY 06",
+            "THE DETAILS THAT STAY",
+            "There are some things about people you remember " +
+            "without ever deciding to remember them.\n\n" +
+            "Tiny details.\n\n" +
+            "Little moments.\n\n" +
+            "Things they probably wouldn't even think twice about.\n\n" +
+            "And somehow, those are the things that stay.\n\n" +
+            "I think that's what happens when you really " +
+            "pay attention to someone.\n\n" +
+            "You start collecting these tiny pieces of them " +
+            "without even meaning to.\n\n" +
+            "And eventually, they become part of the way " +
+            "you remember them.\n\n" +
+            "Some details just stay. 📝"
+        );
+
+    }
 
 }
    function openPlanet(type) {
