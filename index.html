@@ -2241,7 +2241,7 @@ h1 {
     </div>
 
     <div class="red-universe-subtitle">
-        A little collection of songs that feel like you. ❤️
+        A little collection of artists that feel like you. ❤️
     </div>
 
     <!-- MUSIC DISCOVERIES -->
@@ -2324,7 +2324,7 @@ const space = document.getElementById("space");
 
 const discoveredItems = new Set();
 
-const totalDiscoveries = 14;
+const totalDiscoveries = 18;
 
 function updateMissionProgress() {
 
@@ -2768,6 +2768,86 @@ function openBlueDiscovery(type) {
             "And eventually, they become part of the way " +
             "you remember them.\n\n" +
             "Some details just stay. 📝"
+        );
+
+    }
+
+}
+
+   /* =========================
+   RED PLANET DISCOVERIES
+========================= */
+
+function openRedDiscovery(type) {
+
+    discoveredItems.add("red-" + type);
+
+    updateMissionProgress();
+
+
+    if (type === "zach") {
+
+        openDiscovery(
+            "RED PLANET • DISCOVERY 01",
+            "ZACH BRYAN",
+            "There had to be a little corner of this universe " +
+            "for Zach Bryan.\n\n" +
+            "The kind of music that feels a little too honest " +
+            "sometimes.\n\n" +
+            "The kind you can listen to when you're happy, " +
+            "when you're thinking, or when you just need " +
+            "something that feels real.\n\n" +
+            "So naturally, it belongs here. 🎸"
+        );
+
+    }
+
+
+    if (type === "alyssa") {
+
+        openDiscovery(
+            "RED PLANET • DISCOVERY 02",
+            "ALYSSA GRACE",
+            "Another little piece of your soundtrack.\n\n" +
+            "Alyssa Grace had to make it onto the Red Planet " +
+            "because some artists just become part of the " +
+            "little world you create around yourself.\n\n" +
+            "And this is your world.\n\n" +
+            "So this singer gets its own place here. 🦋"
+        );
+
+    }
+
+
+    if (type === "kingfishr") {
+
+        openDiscovery(
+            "RED PLANET • DISCOVERY 03",
+            "KINGFISHR",
+            "Kingfishr belongs here too.\n\n" +
+            "There's something about the sound that feels " +
+            "like it could exist somewhere between a memory " +
+            "and a late-night drive.\n\n" +
+            "So I couldn't make your little soundtrack " +
+            "without giving them their own place. 🌊"
+        );
+
+    }
+
+
+    if (type === "picture") {
+
+        openDiscovery(
+            "RED PLANET • DISCOVERY 04",
+            "PICTURE THIS",
+            "And then there's Picture This.\n\n" +
+            "Another little piece of the music that makes " +
+            "your world feel like yours.\n\n" +
+            "Different artists.\n" +
+            "Different sounds.\n" +
+            "Different memories.\n\n" +
+            "But somehow, they all belong on the same playlist.\n\n" +
+            "Yours. 🎶"
         );
 
     }
