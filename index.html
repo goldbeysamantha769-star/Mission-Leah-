@@ -2107,6 +2107,106 @@ h1 {
     }
 
 }
+
+   .red-secret {
+
+    position: absolute;
+
+    left: 50%;
+    top: 47%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 220, 230, 0.08);
+
+    border:
+        1px solid
+        rgba(255, 190, 210, 0.5);
+
+    box-shadow:
+        0 0 18px
+        rgba(255, 120, 150, 0.5);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+
+}
+
+
+.red-secret.visible {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+
+    animation:
+        secretPulse 2.5s ease-in-out infinite;
+
+}
+
+
+.red-secret span {
+
+    font-size: 22px;
+
+}
+
+
+.red-secret small {
+
+    position: absolute;
+
+    bottom: -20px;
+
+    white-space: nowrap;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+
+    color: #e7c5ce;
+
+}
+
+
+@keyframes secretPulse {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 12px
+            rgba(255, 120, 150, 0.35);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px
+            rgba(255, 120, 150, 0.85);
+    }
+
+}
 /* =========================
    MOBILE
 ========================= */
@@ -2482,6 +2582,17 @@ h1 {
     <span>🎧</span>
     <small>HIDDEN SIGNAL</small>
 </div>
+
+   <div
+    id="red-secret"
+    class="red-secret"
+    onclick="openRedDiscovery('secret')">
+
+    <span>🌟</span>
+
+    <small>SIGNAL FOUND</small>
+
+</div>
     <button
         class="red-back-button"
         onclick="closeRedUniverse()">
@@ -2539,9 +2650,9 @@ const space = document.getElementById("space");
 
 const discoveredItems = new Set();
 
-const totalDiscoveries = 22;
+const totalDiscoveries = 23;
 
-function updateMissionProgress() {
+   function updateMissionProgress() {
 
     const count = discoveredItems.size;
 
@@ -2552,8 +2663,38 @@ function updateMissionProgress() {
         "mission-progress-count"
     ).textContent = percentage + "%";
 
-}
+    checkRedSecret();
 
+}
+   
+   function checkRedSecret() {
+
+    const requiredRedDiscoveries = [
+        "red-zach",
+        "red-alyssa",
+        "red-kingfishr",
+        "red-picture",
+        "red-bloodstream",
+        "red-live",
+        "red-bedroom"
+    ];
+
+    const unlocked =
+        requiredRedDiscoveries.every(
+            item => discoveredItems.has(item)
+        );
+
+    const secret =
+        document.getElementById("red-secret");
+
+    if (unlocked) {
+
+        secret.classList.add("visible");
+
+    }
+
+}
+   
 for (let i = 0; i < 220; i++) {
 
     const star = document.createElement("div");
@@ -3140,6 +3281,32 @@ function openRedDiscovery(type) {
 
 }
 
+   if (type === "secret") {
+
+    discoveredItems.add("red-secret");
+
+    updateMissionProgress();
+
+    openDiscovery(
+        "RED PLANET • CLASSIFIED",
+        "THE SOUNDTRACK",
+        "You found it.\n\n" +
+        "Seven little pieces of your music world " +
+        "led you here.\n\n" +
+        "The artists.\n" +
+        "The songs.\n" +
+        "The concerts.\n" +
+        "The memories.\n" +
+        "The bedroom playlists.\n\n" +
+        "None of them are exactly the same.\n\n" +
+        "But somehow, together, they tell a little story " +
+        "about you.\n\n" +
+        "And I think that's what music does best.\n\n" +
+        "It turns ordinary moments into memories.\n\n" +
+        "🎸 🩸 🌊 🎶 🎤 🎧 💜"
+    );
+
+}
 }
    function openPlanet(type) {
 
