@@ -535,6 +535,102 @@ h1 {
     border-radius: 5px;
 
 }
+
+   #mission-complete {
+
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.8);
+
+    text-align: center;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+
+}
+
+
+#mission-complete.active {
+
+    opacity: 1;
+
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+
+}
+
+
+.complete-star {
+
+    font-size: 55px;
+
+    color: #e7dcff;
+
+    text-shadow:
+        0 0 15px #c5aaff,
+        0 0 40px #8c69ff;
+
+    animation:
+        completeGlow 2s ease-in-out infinite;
+
+}
+
+
+.complete-label {
+
+    margin-top: 12px;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #c7b9ff;
+
+}
+
+
+.complete-message {
+
+    margin-top: 12px;
+
+    font-size: 14px;
+
+    color: #aaa5c4;
+
+}
+
+
+@keyframes completeGlow {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+        opacity: 0.7;
+
+    }
+
+    50% {
+
+        transform: scale(1.15);
+
+        opacity: 1;
+
+    }
+
+}
 /* =========================
    ORBITS
 ========================= */
@@ -2370,13 +2466,25 @@ h1 {
 <section id="universe">
 
     <div class="mission-label">
-
+       
+</div>
     <div>
         MISSION: LEAH
         &nbsp;•&nbsp;
         STATUS: ACTIVE
     </div>
 
+   <div id="mission-complete">
+    <div class="complete-star">✦</div>
+
+    <div class="complete-label">
+        MISSION COMPLETE
+    </div>
+
+    <div class="complete-message">
+        You found everything. 💜
+    </div>
+</div>
   <div class="mission-progress">
     MISSION PROGRESS:
     <span id="mission-progress-count">0%</span>
@@ -2698,7 +2806,12 @@ const totalDiscoveries = 23;
     const count = discoveredItems.size;
 
     const percentage =
-        Math.round((count / totalDiscoveries) * 100);
+        Math.min(
+            100,
+            Math.round(
+                (count / totalDiscoveries) * 100
+            )
+        );
 
     document.getElementById(
         "mission-progress-count"
@@ -2706,8 +2819,16 @@ const totalDiscoveries = 23;
 
     checkRedSecret();
 
+
+    if (percentage >= 100) {
+
+        document
+            .getElementById("mission-complete")
+            .classList.add("active");
+
+    }
+
 }
-   
    function checkRedSecret() {
 
     const requiredRedDiscoveries = [
@@ -3443,9 +3564,3 @@ function openRedDiscovery(type) {
 </body>
 
 </html>
-
-
-    
-    
-    
-  
