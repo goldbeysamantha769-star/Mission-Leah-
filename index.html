@@ -1957,13 +1957,23 @@ h1 {
 
 }
 
-.bloodstream-discovery {
+   .bloodstream-discovery {
 
     left: 43%;
 
-    top: 68%;
+    top: 58%;
 
-    animation-delay: 1.2s;
+    animation-delay: 1.1s;
+
+}
+
+.live-discovery {
+
+    left: 48%;
+
+    top: 23%;
+
+    animation-delay: 2s;
 
 }
 /* =========================
@@ -2003,7 +2013,100 @@ h1 {
         blur(8px);
 }
 
+.music-ring {
 
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 260px;
+    height: 260px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border:
+        1px solid
+        rgba(255, 170, 190, 0.12);
+
+    border-radius: 50%;
+
+    animation:
+        musicOrbit 18s linear infinite;
+
+    pointer-events: none;
+
+}
+
+
+.music-ring span {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    color:
+        rgba(255, 190, 205, 0.5);
+
+    font-size: 16px;
+
+    text-shadow:
+        0 0 10px
+        rgba(255, 100, 130, 0.7);
+
+}
+
+
+.music-ring span:nth-child(1) {
+    transform: translate(-50%, -50%) translateY(-130px);
+}
+
+.music-ring span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(45deg) translateY(-130px);
+}
+
+.music-ring span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(90deg) translateY(-130px);
+}
+
+.music-ring span:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(135deg) translateY(-130px);
+}
+
+.music-ring span:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(180deg) translateY(-130px);
+}
+
+.music-ring span:nth-child(6) {
+    transform: translate(-50%, -50%) rotate(225deg) translateY(-130px);
+}
+
+.music-ring span:nth-child(7) {
+    transform: translate(-50%, -50%) rotate(270deg) translateY(-130px);
+}
+
+.music-ring span:nth-child(8) {
+    transform: translate(-50%, -50%) rotate(315deg) translateY(-130px);
+}
+
+
+@keyframes musicOrbit {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
 /* =========================
    MOBILE
 ========================= */
@@ -2045,6 +2148,16 @@ h1 {
     color: #e7c5ce;
 
     opacity: 0.85;
+}
+
+   .bedroom-discovery {
+
+    left: 18%;
+
+    top: 72%;
+
+    animation-delay: 2.4s;
+
 }
 </style>
 
@@ -2317,6 +2430,17 @@ h1 {
         LEAH'S SOUNDTRACK
     </div>
 
+   <div class="music-ring">
+    <span>♪</span>
+    <span>♫</span>
+    <span>♪</span>
+    <span>♬</span>
+    <span>♫</span>
+    <span>♪</span>
+    <span>♩</span>
+    <span>♫</span>
+</div>
+   
     <div class="red-universe-subtitle">
         A little collection of artists that feel like you. ❤️
     </div>
@@ -2347,10 +2471,16 @@ h1 {
     <small>PICTURE THIS</small>
 </div>
 
-   <div class="red-discovery bloodstream-discovery"
+    <div class="red-discovery bloodstream-discovery"
      onclick="openRedDiscovery('bloodstream')">
     <span>🩸</span>
     <small>BLOODSTREAM</small>
+</div>
+
+   <div class="red-discovery bedroom-discovery"
+     onclick="openRedDiscovery('bedroom')">
+    <span>🎧</span>
+    <small>HIDDEN SIGNAL</small>
 </div>
     <button
         class="red-back-button"
@@ -2409,7 +2539,7 @@ const space = document.getElementById("space");
 
 const discoveredItems = new Set();
 
-const totalDiscoveries = 19;
+const totalDiscoveries = 22;
 
 function updateMissionProgress() {
 
@@ -2875,15 +3005,19 @@ function openRedDiscovery(type) {
         openDiscovery(
             "RED PLANET • DISCOVERY 01",
             "ZACH BRYAN",
-            "There had to be a little corner of this universe " +
-            "for Zach Bryan.\n\n" +
-            "The kind of music that feels a little too honest " +
-            "sometimes.\n\n" +
-            "The kind you can listen to when you're happy, " +
-            "when you're thinking, or when you just need " +
-            "something that feels real.\n\n" +
-            "So naturally, it belongs here. 🎸"
-        );
+                   "There had to be a little corner of this universe " +
+        "for Zach Bryan.\n\n" +
+        "Especially because apparently, if you're in your bedroom, " +
+        "there's a pretty good chance he's playing somewhere in the background.\n\n" +
+        "Maybe it's just one of those little things that has become " +
+        "part of your world without you even thinking about it.\n\n" +
+        "Your bedroom.\n" +
+        "Your music.\n" +
+        "Your little bubble.\n\n" +
+        "And somewhere in the background...\n\n" +
+        "Zach Bryan.\n\n" +
+        "So honestly, I don't think this planet could exist without him. 🎸💜");
+            
 
     }
 
@@ -2893,13 +3027,18 @@ function openRedDiscovery(type) {
         openDiscovery(
             "RED PLANET • DISCOVERY 02",
             "ALYSSA GRACE",
-            "Another little piece of your soundtrack.\n\n" +
-            "Alyssa Grace had to make it onto the Red Planet " +
-            "because some artists just become part of the " +
-            "little world you create around yourself.\n\n" +
-            "And this is your world.\n\n" +
-            "So this singer gets its own place here. 🦋"
+                  "Another little piece of your soundtrack.\n\n" +
+        "And this one feels a little different.\n\n" +
+        "Because it's not just an artist you listen to — " +
+        "there's a song that immediately makes me think of you.\n\n" +
+        "Bloodstream.\n\n" +
+        "There's something about that song that feels like " +
+        "one of those little pieces of your world that I " +
+        "wouldn't want to leave out of this universe.\n\n" +
+        "So Alyssa Grace gets her own little corner here.\n\n" +
+        "And honestly, I think Bloodstream belongs here too. 🦋💜"
         );
+          
 
     }
 
@@ -2909,13 +3048,20 @@ function openRedDiscovery(type) {
         openDiscovery(
             "RED PLANET • DISCOVERY 03",
             "KINGFISHR",
-            "Kingfishr belongs here too.\n\n" +
-            "There's something about the sound that feels " +
-            "like it could exist somewhere between a memory " +
-            "and a late-night drive.\n\n" +
-            "So I couldn't make your little soundtrack " +
-            "without giving them their own place. 🌊"
+       "Kingfishr belongs here too.\n\n" +
+        "But there's something different about hearing an artist " +
+        "you love live.\n\n" +
+        "It's not just the songs anymore.\n\n" +
+        "It's the noise of everyone around you.\n" +
+        "The lights.\n" +
+        "The atmosphere.\n" +
+        "That moment when a song you've listened to through " +
+        "your headphones suddenly exists right in front of you.\n\n" +
+        "And apparently, you loved every second of it.\n\n" +
+        "So this little corner isn't just for Kingfishr.\n\n" +
+        "It's for the memory of seeing them live. 🌊💜"
         );
+         
 
     }
 
@@ -2925,36 +3071,74 @@ function openRedDiscovery(type) {
         openDiscovery(
             "RED PLANET • DISCOVERY 04",
             "PICTURE THIS",
-            "And then there's Picture This.\n\n" +
-            "Another little piece of the music that makes " +
-            "your world feel like yours.\n\n" +
-            "Different artists.\n" +
-            "Different sounds.\n" +
-            "Different memories.\n\n" +
-            "But somehow, they all belong on the same playlist.\n\n" +
-            "Yours. 🎶"
-        );
+           "And then there's Picture This.\n\n" +
+           "Another band that came part of your soundtrack - " +
+           "and another one you got to experience live.\n\n" +
+            "There's something about seeing an artist live that " +
+        "makes the music feel completely different afterwards.\n\n" +
+        "Suddenly, a song isn't just a song anymore.\n\n" +
+        "It's a memory.\n" +
+        "A night.\n" +
+        "A crowd singing along.\n" +
+        "A moment you actually got to be there for.\n\n" +
+        "And judging by how much you loved it, " +
+        "I think that memory deserves a little place in your universe too. 🎶💜"
+       );
 
     }
 
-       if (type === "bloodstream") {
+           if (type === "bloodstream") {
 
         openDiscovery(
             "RED PLANET • DISCOVERY 05",
             "BLOODSTREAM",
-            "There are some songs that are just songs.\n\n" +
-            "And then there are the ones that somehow " +
-            "become attached to a person.\n\n" +
-            "Bloodstream feels like one of those for you.\n\n" +
-            "The kind of song that belongs in the background " +
-            "of a bedroom, playing while you're doing your own thing, " +
-            "and somehow becoming part of the atmosphere without " +
-            "you even thinking about it.\n\n" +
-            "So obviously, it needed its own little place here.\n\n" +
-            "🎵💜"
+            "Some songs just become yours.\n\n" +
+            "And apparently, Bloodstream is one of those songs for you.\n\n" +
+            "It's the kind of song that belongs in your little universe " +
+            "because somehow, certain songs just feel like they were " +
+            "always meant to be there.\n\n" +
+            "So obviously, it needed its own little place here. 🩸💜"
         );
 
     }
+
+
+    if (type === "live") {
+
+        openDiscovery(
+            "RED PLANET • DISCOVERY 06",
+            "THE LIVE MUSIC MEMORIES",
+            "You've seen Kingfishr.\n\n" +
+            "You've seen Picture This.\n\n" +
+            "You've seen Zach Bryan.\n\n" +
+            "And from everything I know, you absolutely loved it.\n\n" +
+            "There's something different about hearing music you love " +
+            "with thousands of other people singing along.\n\n" +
+            "So this isn't just about the artists.\n\n" +
+            "It's about the memories you've made with their music. 🎤❤️"
+        );
+
+    }
+
+   if (type === "bedroom") {
+
+    openDiscovery(
+        "RED PLANET • HIDDEN TRANSMISSION",
+        "THE BEDROOM SIGNAL",
+        "There's apparently one place where Zach Bryan " +
+        "has a pretty reliable place in your universe.\n\n" +
+        "Your bedroom.\n\n" +
+        "I don't know what it is about having music playing " +
+        "in the background while you're in your own little space, " +
+        "but somehow that feels like such a specific little piece " +
+        "of your world.\n\n" +
+        "So this is your reminder that even the places you think " +
+        "are completely ordinary can become part of someone's " +
+        "favourite memories of you.\n\n" +
+        "🎧🎸💜"
+    );
+
+}
 
 }
    function openPlanet(type) {
