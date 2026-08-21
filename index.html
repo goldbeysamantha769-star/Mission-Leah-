@@ -2444,6 +2444,225 @@ h1 {
         rgba(170, 140, 255, 0.55);
 
 }
+
+/* =========================
+   FINAL TRANSMISSION
+========================= */
+
+#final-transmission {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(2, 2, 11, 0.96);
+
+    backdrop-filter:
+        blur(15px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.8s ease;
+
+}
+
+#final-transmission.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+.final-transmission-panel {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 40px 25px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(190, 165, 255, 0.45);
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35, 25, 75, 0.97),
+            rgba(7, 7, 22, 0.98)
+        );
+
+    box-shadow:
+        0 0 40px
+        rgba(130, 90, 255, 0.25),
+        inset 0 0 35px
+        rgba(130, 90, 255, 0.05);
+
+    transform:
+        translateY(25px)
+        scale(0.95);
+
+    transition:
+        transform 0.8s ease;
+
+}
+
+
+#final-transmission.active
+.final-transmission-panel {
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+.final-transmission-star {
+
+    font-size: 55px;
+
+    color: #f0e8ff;
+
+    text-shadow:
+        0 0 15px #d5bdff,
+        0 0 35px #a47cff,
+        0 0 65px #7654ff;
+
+    animation:
+        completeGlow 2s ease-in-out infinite;
+
+}
+
+
+.final-transmission-label {
+
+    margin-top: 15px;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #a89cff;
+
+}
+
+
+.final-transmission-panel h2 {
+
+    margin: 18px 0 0;
+
+    font-size: 28px;
+
+    letter-spacing: -1px;
+
+}
+
+
+.final-transmission-line {
+
+    width: 60px;
+
+    height: 1px;
+
+    margin: 22px auto;
+
+    background:
+        #9b7cff;
+
+    box-shadow:
+        0 0 10px #9b7cff;
+
+}
+
+
+.final-transmission-panel p {
+
+    margin: 0;
+
+    color: #c7c4d8;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    white-space: pre-line;
+
+}
+
+
+.transmission-close-button {
+
+    margin-top: 28px;
+
+    padding: 12px 24px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid
+        rgba(190, 165, 255, 0.5);
+
+    background:
+        rgba(80, 55, 150, 0.25);
+
+    color: white;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+}
+
+
+.transmission-close-button:hover {
+
+    transform: scale(1.06);
+
+    background:
+        rgba(100, 75, 180, 0.4);
+
+    box-shadow:
+        0 0 25px
+        rgba(170, 140, 255, 0.55);
+
+}
+   
 </style>
 
 </head>
@@ -2814,6 +3033,65 @@ h1 {
     </button>
 
 </section>
+
+<!-- =========================
+     FINAL TRANSMISSION
+========================= -->
+
+<div id="final-transmission">
+
+    <div class="final-transmission-panel">
+
+        <div class="final-transmission-star">
+            ✦
+        </div>
+
+        <div class="final-transmission-label">
+            FINAL TRANSMISSION
+        </div>
+
+        <h2>
+            FOR LEAH 💜
+        </h2>
+
+        <div class="final-transmission-line"></div>
+
+        <p>
+            If you made it this far, then you found
+            everything I hid around this little universe.
+
+            But there's one thing I couldn't really
+            put on a planet.
+
+            So I saved it for here.
+
+            Thank you for being you.
+
+            For all the little conversations,
+            the random moments, the laughs,
+            the stories, and all the tiny things
+            that probably mean more than you realise.
+
+            I hope when you look back at this,
+            you remember that someone thought
+            you were worth building an entire
+            universe for.
+
+            💜
+        </p>
+
+        <button
+            class="transmission-close-button"
+            onclick="closeFinalTransmission()">
+
+            RETURN TO THE STARS ✦
+
+        </button>
+
+    </div>
+
+</div>
+   
 <!-- =========================
      DISCOVERY SCREEN
 ========================= -->
@@ -3036,7 +3314,25 @@ function closeMissionComplete() {
         .getElementById("mission-complete")
         .classList.remove("active");
 
+    setTimeout(function() {
+
+        document
+            .getElementById("final-transmission")
+            .classList.add("active");
+
+    }, 700);
+
 }
+
+
+function closeFinalTransmission() {
+
+    document
+        .getElementById("final-transmission")
+        .classList.remove("active");
+
+}
+   
 /* =========================
    PLANET INTERACTIONS
 ========================= */
