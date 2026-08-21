@@ -2475,6 +2475,7 @@ h1 {
     </div>
 
    <div id="mission-complete">
+
     <div class="complete-star">✦</div>
 
     <div class="complete-label">
@@ -2484,7 +2485,17 @@ h1 {
     <div class="complete-message">
         You found everything. 💜
     </div>
+
+    <button
+        class="final-transmission-button"
+        onclick="closeMissionComplete()">
+
+        FINAL TRANSMISSION ✦
+
+    </button>
+
 </div>
+   
   <div class="mission-progress">
     MISSION PROGRESS:
     <span id="mission-progress-count">0%</span>
@@ -2804,7 +2815,7 @@ const space = document.getElementById("space");
 
 const discoveredItems = new Set();
 
-const totalDiscoveries = 23;
+const totalDiscoveries = 24;
 
    function updateMissionProgress() {
 
@@ -2949,11 +2960,23 @@ function openDiscovery(label, title, message) {
 
    function closeDiscovery() {
 
-      document.getElementById("discovery-screen").classList.remove("active");
-   }
+    document
+        .getElementById("discovery-screen")
+        .classList.remove("active");
 
+    if (discoveredItems.size >= totalDiscoveries) {
 
+        setTimeout(function() {
 
+            document
+                .getElementById("mission-complete")
+                .classList.add("active");
+
+        }, 600);
+
+    }
+
+}
 /* =========================
    PLANET INTERACTIONS
 ========================= */
@@ -3485,20 +3508,33 @@ function openRedDiscovery(type) {
 
     }
 
-    if (type === "heart") {
+      if (type === "heart") {
 
-        openDiscovery(
-            "MISSION CORE",
-            "THE HEART OF THE UNIVERSE",
-            "Every mission needs a centre.\n\n" +
-            "This universe has a very specific " +
-            "reason for existing.\n\n" +
-            "You.\n\n💜"
-        );
+    discoveredItems.add("heart");
 
-    }
+    updateMissionProgress();
 
+    openDiscovery(
+        "MISSION CORE • FINAL DISCOVERY",
+        "THE HEART OF THE UNIVERSE",
+        "Every mission needs a centre.\n\n" +
+        "And somehow, everything in this little universe " +
+        "keeps leading back to the same place.\n\n" +
+        "You.\n\n" +
+        "The music.\n" +
+        "The little things.\n" +
+        "The memories.\n" +
+        "The things I've noticed.\n" +
+        "All of it exists because of you.\n\n" +
+        "So maybe this was never really a universe " +
+        "about finding things.\n\n" +
+        "Maybe it was about showing you how many " +
+        "little pieces of you I've noticed along the way.\n\n" +
+        "And if you made it all the way back here...\n\n" +
+        "you found the heart. 💜"
+    );
 
+}
     if (type === "memory") {
 
         openDiscovery(
