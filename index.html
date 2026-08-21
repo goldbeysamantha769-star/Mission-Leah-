@@ -570,16 +570,16 @@ h1 {
 
 }
 
+   .complete-star {
 
-.complete-star {
+    font-size: 65px;
 
-    font-size: 55px;
-
-    color: #e7dcff;
+    color: #f0e8ff;
 
     text-shadow:
-        0 0 15px #c5aaff,
-        0 0 40px #8c69ff;
+        0 0 15px #d5bdff,
+        0 0 35px #a47cff,
+        0 0 70px #7654ff;
 
     animation:
         completeGlow 2s ease-in-out infinite;
@@ -598,8 +598,6 @@ h1 {
     color: #c7b9ff;
 
 }
-
-
 .complete-message {
 
     margin-top: 12px;
@@ -2396,6 +2394,56 @@ h1 {
     animation-delay: 2.4s;
 
 }
+   /* =========================
+   FINAL TRANSMISSION BUTTON
+========================= */
+
+.final-transmission-button {
+
+    margin-top: 25px;
+
+    padding: 12px 24px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid
+        rgba(190, 165, 255, 0.55);
+
+    background:
+        rgba(80, 55, 150, 0.25);
+
+    color: #eee9ff;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 15px
+        rgba(150, 120, 255, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+}
+
+.final-transmission-button:hover {
+
+    transform: scale(1.06);
+
+    background:
+        rgba(100, 75, 180, 0.4);
+
+    box-shadow:
+        0 0 25px
+        rgba(170, 140, 255, 0.55);
+
+}
 </style>
 
 </head>
@@ -2975,6 +3023,18 @@ function openDiscovery(label, title, message) {
         }, 600);
 
     }
+
+}
+
+   /* =========================
+   FINAL TRANSMISSION
+========================= */
+
+function closeMissionComplete() {
+
+    document
+        .getElementById("mission-complete")
+        .classList.remove("active");
 
 }
 /* =========================
