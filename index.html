@@ -3161,28 +3161,34 @@ const totalDiscoveries = 24;
 
     checkRedSecret();
 
+if (percentage >= 100) {
 
-    if (percentage >= 100) {
+    document
+        .getElementById("mission-complete")
+        .classList.add("active");
+
+    setTimeout(function() {
 
         document
-            .getElementById("mission-complete")
+            .getElementById("final-transmission")
             .classList.add("active");
 
-    }
+    }, 2500);
 
+}
+      
 }
    function checkRedSecret() {
 
-    const requiredRedDiscoveries = [
-        "red-zach",
-        "red-alyssa",
-        "red-kingfishr",
-        "red-picture",
-        "red-bloodstream",
-        "red-live",
-        "red-bedroom"
-    ];
-
+const requiredRedDiscoveries = [
+    "red-zach",
+    "red-alyssa",
+    "red-kingfishr",
+    "red-picture",
+    "red-bloodstream",
+    "red-bedroom"
+];
+      
     const unlocked =
         requiredRedDiscoveries.every(
             item => discoveredItems.has(item)
@@ -3191,12 +3197,12 @@ const totalDiscoveries = 24;
     const secret =
         document.getElementById("red-secret");
 
-    if (unlocked) {
+if (unlocked && !secret.classList.contains("visible")) {
 
-        secret.classList.add("visible");
+    secret.classList.add("visible");
 
-    }
-
+}
+      
 }
    
 for (let i = 0; i < 220; i++) {
@@ -3956,6 +3962,18 @@ function openRedDiscovery(type) {
 }
 }
 
+/* =========================
+   FINAL TRANSMISSION
+========================= */
+
+function closeFinalTransmission() {
+
+    document
+        .getElementById("final-transmission")
+        .classList.remove("active");
+
+}
+   
 </script>
 
 </body>
