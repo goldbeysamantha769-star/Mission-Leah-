@@ -3330,13 +3330,9 @@ function closeMissionComplete() {
 
 }
 
-
 function closeFinalTransmission() {
-
-    document
-        .getElementById("final-transmission")
-        .classList.remove("active");
-
+    document.getElementById("final-transmission").classList.remove("active");
+    document.getElementById("mission-complete").classList.remove("active");
 }
    
 /* =========================
