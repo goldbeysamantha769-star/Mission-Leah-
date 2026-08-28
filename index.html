@@ -3856,48 +3856,36 @@ function openRedDiscovery(type) {
 
 }
 }
-   function openPlanet(type) {
 
-       if (type === "memory") {
+function openPlanet(type) {
+
+    if (type === "memory") {
 
         openPinkUniverse();
 
         return;
 
-       }
+    }
 
-if (type === "heart") {
-    discoveredItems.add("heart");
-    updateMissionProgress();
+    if (type === "heart") {
 
-    openDiscovery(
-        "MISSION CORE • FINAL DISCOVERY",
-        "THE PART I NEVER SAY OUT LOUD",
-        "Somewhere along the way, you became someone I don't think I'll ever stop being grateful for. It's the little things about you — the way you smile, the things you get excited about, and the way you can make an ordinary moment feel different. I don't really know what to call that feeling. I just know it's you. 💜"
-    );
-}
-      
-}
-    if (type === "memory") {
+        discoveredItems.add("heart");
+        updateMissionProgress();
 
         openDiscovery(
-            "PLANET LEAH",
-            "PERSONAL ARCHIVE",
-            "You found something that was not " +
-            "marked on the map.\n\n" +
-            "This planet contains a collection " +
-            "of things about you.\n\n" +
-            "Some things are obvious.\n\n" +
-            "Some things are tiny.\n\n" +
-            "And some are things you probably " +
-            "don't realise I've noticed.\n\n" +
-            "Take your time exploring. 💜"
+            "MISSION CORE • FINAL DISCOVERY",
+            "THE PART I NEVER SAY OUT LOUD",
+            "Somewhere along the way, you became someone I don't think I'll ever stop being grateful for. It's the little things about you — the way you smile, the things you get excited about, and the way you can make an ordinary moment feel different. I don't really know what to call that feeling. I just know it's you. 💜"
         );
+
+        return;
 
     }
 
-
     if (type === "leah") {
+
+        discoveredItems.add("leah");
+        updateMissionProgress();
 
         openDiscovery(
             "PLANET TWO",
@@ -3907,42 +3895,46 @@ if (type === "heart") {
             "details that make you special. 💜"
         );
 
+        return;
+
     }
 
-      if (type === "music") {
+    if (type === "music") {
 
-    openRedUniverse();
+        openRedUniverse();
 
-    return;
+        return;
 
-      }
+    }
 
-      if (type === "moon") {
+    if (type === "moon") {
 
-    discoveredItems.add("moon");
+        discoveredItems.add("moon");
+        updateMissionProgress();
 
-    updateMissionProgress();
+        openDiscovery(
+            "HIDDEN TRANSMISSION • 001",
+            "THE MOON",
+            "You found the one thing that wasn't meant " +
+            "to be obvious.\n\n" +
+            "Some things in this universe aren't planets.\n" +
+            "They aren't stars.\n" +
+            "They aren't even things you can easily explain.\n\n" +
+            "They're just little pieces of someone that " +
+            "you somehow ended up carrying with you.\n\n" +
+            "And maybe that's what this moon is.\n\n" +
+            "A little reminder that even after you've " +
+            "explored everything else, there can still " +
+            "be something hidden in the dark.\n\n" +
+            "🌙💜"
+        );
 
-    openDiscovery(
-        "HIDDEN TRANSMISSION • 001",
-        "THE MOON",
-        "You found the one thing that wasn't meant " +
-        "to be obvious.\n\n" +
-        "Some things in this universe aren't planets.\n" +
-        "They aren't stars.\n" +
-        "They aren't even things you can easily explain.\n\n" +
-        "They're just little pieces of someone that " +
-        "you somehow ended up carrying with you.\n\n" +
-        "And maybe that's what this moon is.\n\n" +
-        "A little reminder that even after you've " +
-        "explored everything else, there can still " +
-        "be something hidden in the dark.\n\n" +
-        "🌙💜"
-    );
+        return;
+
+    }
 
 }
-}
-
+   
 /* =========================
    FINAL TRANSMISSION
 ========================= */
