@@ -2753,21 +2753,19 @@ h1 {
         You found everything. 💜
     </div>
 
-    <button
-        class="final-transmission-button"
-        onclick="closeMissionComplete()">
+<button
+    class="final-transmission-button"
+    onclick="closeMissionComplete()">
 
-        FINAL TRANSMISSION ✦
+    RETURN TO THE STARS ✦
 
-    </button>
-
+</button>
+      
 </div>
    
   <div class="mission-progress">
     MISSION PROGRESS:
     <span id="mission-progress-count">0%</span>
-</div>
-
 </div>
 
     <div 
@@ -3163,17 +3161,8 @@ const totalDiscoveries = 24;
 
 if (percentage >= 100) {
 
-    document
-        .getElementById("mission-complete")
-        .classList.add("active");
-
-    setTimeout(function() {
-
-        document
-            .getElementById("final-transmission")
-            .classList.add("active");
-
-    }, 2500);
+    // Mission is complete,
+    // but do NOT show the final transmission yet.
 
 }
       
@@ -3314,26 +3303,17 @@ function openDiscovery(label, title, message) {
    FINAL TRANSMISSION
 ========================= */
 
-function closeMissionComplete() {
+
+   function closeMissionComplete() {
 
     document
         .getElementById("mission-complete")
         .classList.remove("active");
 
-    setTimeout(function() {
-
-        document
-            .getElementById("final-transmission")
-            .classList.add("active");
-
-    }, 700);
-
 }
 
-function closeFinalTransmission() {
-    document.getElementById("final-transmission").classList.remove("active");
-    document.getElementById("mission-complete").classList.remove("active");
-}
+
+
    
 /* =========================
    PLANET INTERACTIONS
@@ -3941,12 +3921,25 @@ function openPlanet(type) {
 
 function closeFinalTransmission() {
 
-    document
-        .getElementById("final-transmission")
-        .classList.remove("active");
+    const finalTransmission =
+        document.getElementById("final-transmission");
+
+    const missionComplete =
+        document.getElementById("mission-complete");
+
+    // Remove everything from the screen
+    finalTransmission.classList.remove("active");
+    missionComplete.classList.remove("active");
+
+    // Make absolutely sure the final transmission
+    // cannot remain visible underneath
+    finalTransmission.style.display = "none";
+
+    setTimeout(function() {
+        finalTransmission.style.display = "";
+    }, 700);
 
 }
-   
 </script>
 
 </body>
