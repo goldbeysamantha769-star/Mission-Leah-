@@ -3312,15 +3312,23 @@ function openDiscovery(label, title, message) {
    FINAL TRANSMISSION
 ========================= */
 
+function closeMissionComplete() {
 
-   function closeMissionComplete() {
+    const missionComplete =
+        document.getElementById("mission-complete");
 
-    document
-        .getElementById("mission-complete")
-        .classList.remove("active");
+    const finalTransmission =
+        document.getElementById("final-transmission");
+
+    missionComplete.classList.remove("active");
+
+    setTimeout(function() {
+
+        finalTransmission.classList.add("active");
+
+    }, 700);
 
 }
-
 
 
    
@@ -3930,13 +3938,14 @@ function openPlanet(type) {
 
 function closeFinalTransmission() {
 
-    document
-        .getElementById("final-transmission")
-        .classList.remove("active");
+    const finalTransmission =
+        document.getElementById("final-transmission");
 
-    document
-        .getElementById("mission-complete")
-        .classList.remove("active");
+    const missionComplete =
+        document.getElementById("mission-complete");
+
+    finalTransmission.classList.remove("active");
+    missionComplete.classList.remove("active");
 
 }
 </script>
