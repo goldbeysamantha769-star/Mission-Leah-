@@ -3161,8 +3161,17 @@ const totalDiscoveries = 24;
 
 if (percentage >= 100) {
 
-    // Mission is complete,
-    // but do NOT show the final transmission yet.
+    document
+        .getElementById("mission-complete")
+        .classList.add("active");
+
+    setTimeout(function() {
+
+        document
+            .getElementById("final-transmission")
+            .classList.add("active");
+
+    }, 2500);
 
 }
       
@@ -3921,23 +3930,13 @@ function openPlanet(type) {
 
 function closeFinalTransmission() {
 
-    const finalTransmission =
-        document.getElementById("final-transmission");
+    document
+        .getElementById("final-transmission")
+        .classList.remove("active");
 
-    const missionComplete =
-        document.getElementById("mission-complete");
-
-    // Remove everything from the screen
-    finalTransmission.classList.remove("active");
-    missionComplete.classList.remove("active");
-
-    // Make absolutely sure the final transmission
-    // cannot remain visible underneath
-    finalTransmission.style.display = "none";
-
-    setTimeout(function() {
-        finalTransmission.style.display = "";
-    }, 700);
+    document
+        .getElementById("mission-complete")
+        .classList.remove("active");
 
 }
 </script>
